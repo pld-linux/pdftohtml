@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/pdftohtml/%{name}_0_32b.tar.gz
+# Source0-md5:	8d37b36f615671244f4bab75a3fa0691
 Patch0:		%{name}.patch
 URL:		http://pdftohtml.sourceforge.net/
 BuildRequires:	libstdc++-devel
