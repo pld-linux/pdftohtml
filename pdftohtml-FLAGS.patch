@@ -1,0 +1,71 @@
+diff -Nurb pdftohtml-0.36.orig/goo/Makefile pdftohtml-0.36.new/goo/Makefile
+--- pdftohtml-0.36.orig/goo/Makefile	2003-06-25 00:41:27.000000000 +0200
++++ pdftohtml-0.36.new/goo/Makefile	2004-12-28 03:23:06.565945520 +0100
+@@ -7,13 +7,15 @@
+ #
+ #========================================================================
+ 
+-SHELL = /bin/sh
++SHELL ?= /bin/sh
+ 
+ srcdir = .
+ 
+-CFLAGS += $(DEBUG) -O2 -DHAVE_CONFIG_H -I.. -I$(srcdir) 
++CFLAGS ?= -O2
++override CFLAGS += $(DEBUG) -DHAVE_CONFIG_H -I.. -I$(srcdir) 
+ #-g -DDEBUG_MEM
+-CXXFLAGS += $(DEBUG) -O2 -DHAVE_CONFIG_H -I.. -I$(srcdir) 
++CXXFLAGS ?= -O2
++override CXXFLAGS += $(DEBUG) -DHAVE_CONFIG_H -I.. -I$(srcdir) 
+ #-g -DDEBUG_MEM
+ 
+ CC ?= cc
+diff -Nurb pdftohtml-0.36.orig/Makefile pdftohtml-0.36.new/Makefile
+--- pdftohtml-0.36.orig/Makefile	2003-06-25 00:41:27.000000000 +0200
++++ pdftohtml-0.36.new/Makefile	2004-12-28 02:58:49.634432776 +0100
+@@ -1,7 +1,7 @@
+-SHELL = /bin/sh
++SHELL ?= /bin/sh
+ 
+-prefix = /usr/local
+-exec_prefix = ${prefix}
++prefix ?= /usr/local
++exec_prefix ?= ${prefix}
+ srcdir = .
+ 
+ 
+diff -Nurb pdftohtml-0.36.orig/src/Makefile pdftohtml-0.36.new/src/Makefile
+--- pdftohtml-0.36.orig/src/Makefile	2003-06-25 00:41:27.000000000 +0200
++++ pdftohtml-0.36.new/src/Makefile	2004-12-28 03:23:34.694669304 +0100
+@@ -1,6 +1,6 @@
+ 
+ 
+-SHELL = /bin/sh
++SHELL ?= /bin/sh
+ 
+ SRCDIR = .
+ XPDFSRCDIR = ../xpdf
+@@ -9,8 +9,8 @@
+ GOOSRCDIR = ../goo
+ GOOLIBDIR = ../goo
+ 
+-
+-CXXFLAGS += $(DEBUG) -DHAVE_DIRENT_H=1  -I.. -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(GOOSRCDIR) -I$(SRCDIR) -I$(XPDFSRCDIR) 
++CXXFLAGS ?= -O2
++override CXXFLAGS += $(DEBUG) -DHAVE_DIRENT_H=1  -I.. -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(GOOSRCDIR) -I$(SRCDIR) -I$(XPDFSRCDIR) 
+ 
+ LDFLAGS = 
+ 
+diff -Nurb pdftohtml-0.36.orig/xpdf/Makefile pdftohtml-0.36.new/xpdf/Makefile
+--- pdftohtml-0.36.orig/xpdf/Makefile	2003-06-25 00:41:27.000000000 +0200
++++ pdftohtml-0.36.new/xpdf/Makefile	2004-12-28 03:23:56.488356160 +0100
+@@ -14,7 +14,8 @@
+ GOOSRCDIR = $(srcdir)/../goo
+ GOOLIBDIR = ../goo
+ 
+-CXXFLAGS += $(DEBUG) -O2 -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir) 
++CXXFLAGS ?= -O2
++override CXXFLAGS += $(DEBUG) -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir) 
+ 
+ CC ?= cc
+ CXX ?= c++

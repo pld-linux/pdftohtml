@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/pdftohtml/%{name}-%{version}.tar.gz
 # Source0-md5:	75ad095bb51e1f66c9f7691e6af12f44
+Patch0:		%{name}-FLAGS.patch
 URL:		http://pdftohtml.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -19,9 +20,11 @@ Konwerter PDF do HTML-a.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__make}
+# Splitting into several lines what is below is strongly prohibited.
+%{__make} CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
