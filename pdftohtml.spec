@@ -23,13 +23,13 @@ Konwerter PDF do HTML-a.
 %patch0 -p1
 
 %build
-# Splitting into several lines what is below is strongly prohibited.
-%{__make} CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" CFLAGS="%{rpmcflags}" \
+	CXX="%{__cxx}" CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install  %{name} $RPM_BUILD_ROOT%{_bindir}/pdftohtml
+install -D pdftohtml $RPM_BUILD_ROOT%{_bindir}/pdftohtml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
