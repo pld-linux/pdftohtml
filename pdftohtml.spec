@@ -47,14 +47,12 @@ install pdftohtml.bin $RPM_BUILD_ROOT%{_bindir}/pdftohtml
 install pdftops.bin $RPM_BUILD_ROOT%{_bindir}/pdftops
 install pdftohtml $RPM_BUILD_ROOT%{_bindir}/pdftohtml.sh
 
-gzip -9nf CHANGES README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {CHANGES,README}.gz
+%doc CHANGES README
 %attr(755,root,root) %{_bindir}/pdftohtml.sh
 %attr(755,root,root) %{_bindir}/pdftohtml
 
