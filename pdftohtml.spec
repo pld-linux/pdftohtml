@@ -22,7 +22,7 @@ Konwerter PDF do HTML.
 %package pdftops
 Summary:	PDF to PS converter
 Group:		Applications/Publishing
-Obsoletes:	pdftops
+Conflicts:	xpdf
 Provides:	pdftops
 
 %description pdftops
