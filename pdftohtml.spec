@@ -5,7 +5,7 @@ Version:	0.32b
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Source0:	http://prdownloads.sourceforge.net/pdftohtml/pdftohtml_0_32b.tar.gz
+Source0:	http://prdownloads.sourceforge.net/pdftohtml/%{name}_0_32b.tar.gz
 Patch0:		%{name}.patch
 URL:		http://pdftohtml.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
