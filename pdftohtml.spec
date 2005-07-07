@@ -1,3 +1,6 @@
+#
+# NOTE:	-CAN-2004-1125.patch is not used - ask adamg why.
+#
 Summary:	PDF to HTML converter
 Summary(pl):	Konwerter plików PDF do HTML-a
 Name:		pdftohtml
@@ -9,6 +12,7 @@ Source0:	http://dl.sourceforge.net/pdftohtml/%{name}-%{version}.tar.gz
 # Source0-md5:	75ad095bb51e1f66c9f7691e6af12f44
 Patch0:		%{name}-FLAGS.patch
 Patch1:		%{name}-CAN-2004-1125.patch
+Patch2:		%{name}-nobodycolors_opt.patch
 URL:		http://pdftohtml.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,6 +26,7 @@ Konwerter PDF do HTML-a.
 %prep
 %setup -q
 %patch0 -p1
+%patch2 -p1
 
 %build
 %{__make} \
