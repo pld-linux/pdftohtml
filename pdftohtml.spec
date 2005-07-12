@@ -12,6 +12,7 @@ Patch1:		%{name}-CAN-2004-1125.patch
 Patch2:		%{name}-nobodycolors_opt.patch
 URL:		http://pdftohtml.sourceforge.net/
 BuildRequires:	libstdc++-devel
+Obsoletes:	pdftohtml-pdftops
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
