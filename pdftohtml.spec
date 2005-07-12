@@ -1,11 +1,8 @@
-#
-# NOTE:	-CAN-2004-1125.patch is not used - ask adamg why.
-#
 Summary:	PDF to HTML converter
 Summary(pl):	Konwerter plików PDF do HTML-a
 Name:		pdftohtml
 Version:	0.36
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/pdftohtml/%{name}-%{version}.tar.gz
@@ -26,6 +23,9 @@ Konwerter PDF do HTML-a.
 %prep
 %setup -q
 %patch0 -p1
+cd xpdf
+%patch1 -p0
+cd ..
 %patch2 -p1
 
 %build
