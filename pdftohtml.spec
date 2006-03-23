@@ -12,9 +12,9 @@ Patch1:		%{name}-CAN-2004-1125.patch
 Patch2:		%{name}-nobodycolors_opt.patch
 Patch3:		%{name}-c++.patch
 URL:		http://pdftohtml.sourceforge.net/
-# for X11 headers used in xpdf/XPDFCore.cc
-BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
+# for X11 headers used in xpdf/XPDFCore.cc
+BuildRequires:	xorg-lib-libX11-devel
 Obsoletes:	pdftohtml-pdftops
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
