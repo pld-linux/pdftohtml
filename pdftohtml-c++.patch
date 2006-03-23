@@ -1,0 +1,23 @@
+--- pdftohtml-0.38/src/HtmlLinks.h.orig	2003-06-25 00:41:28.000000000 +0200
++++ pdftohtml-0.38/src/HtmlLinks.h	2006-03-23 19:30:29.590763250 +0100
+@@ -19,7 +19,7 @@
+   HtmlLink& operator=(const HtmlLink& x);
+   HtmlLink(double xmin,double ymin,double xmax,double ymax,GString *_dest);
+   ~HtmlLink();
+-  GBool HtmlLink::isEqualDest(const HtmlLink& x) const;
++  GBool isEqualDest(const HtmlLink& x) const;
+   GString *getDest(){return new GString(dest);}
+   double getX1() const {return Xmin;}
+   double getX2() const {return Xmax;}
+--- pdftohtml-0.38/xpdf/TextOutputDev.h.orig	2004-01-22 02:26:46.000000000 +0100
++++ pdftohtml-0.38/xpdf/TextOutputDev.h	2006-03-23 19:29:48.592201000 +0100
+@@ -25,6 +25,9 @@
+ class GfxFont;
+ class GfxState;
+ class UnicodeMap;
++class TextBlock;
++class TextPage;
++class TextLineFrag;
+ 
+ //------------------------------------------------------------------------
+ 
