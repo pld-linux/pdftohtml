@@ -1,5 +1,5 @@
 Summary:	PDF to HTML converter
-Summary(pl):	Konwerter plików PDF do HTML-a
+Summary(pl.UTF-8):   Konwerter plikÃ³w PDF do HTML-a
 Name:		pdftohtml
 Version:	0.38
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 PDF to HTML converter.
 
-%description -l pl
+%description -l pl.UTF-8
 Konwerter PDF do HTML-a.
 
 %prep
