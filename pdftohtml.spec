@@ -1,12 +1,12 @@
 Summary:	PDF to HTML converter
 Summary(pl.UTF-8):	Konwerter plików PDF do HTML-a
 Name:		pdftohtml
-Version:	0.38
+Version:	0.39
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://dl.sourceforge.net/pdftohtml/%{name}-%{version}.tar.gz
-# Source0-md5:	4f69f650a5cb2012b2ca63f15c31f6a9
+# Source0-md5:	b0e9f07025b968186ae2efc37eece5f2
 Patch0:		%{name}-FLAGS.patch
 Patch1:		%{name}-CAN-2004-1125.patch
 Patch2:		%{name}-nobodycolors_opt.patch
