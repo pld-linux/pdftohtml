@@ -9,15 +9,4 @@
    GString *getDest(){return new GString(dest);}
    double getX1() const {return Xmin;}
    double getX2() const {return Xmax;}
---- pdftohtml-0.38/xpdf/TextOutputDev.h.orig	2004-01-22 02:26:46.000000000 +0100
-+++ pdftohtml-0.38/xpdf/TextOutputDev.h	2006-03-23 19:29:48.592201000 +0100
-@@ -25,6 +25,9 @@
- class GfxFont;
- class GfxState;
- class UnicodeMap;
-+class TextBlock;
-+class TextPage;
-+class TextLineFrag;
- 
- //------------------------------------------------------------------------
- 
+
